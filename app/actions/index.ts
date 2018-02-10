@@ -13,3 +13,17 @@ export const finishEditing = (subCatId: number, value: string) => {
         value
     }
 }
+
+export const selectNavigation = (navigationKey: string) => {
+    return {
+        type: 'SELECT_NAVIGATION',
+        navigationKey
+    };
+};
+
+export const selectAccount = (accountId: string) => {
+    return {
+        type: 'SELECT_ACCOUNT',
+        accountId
+    }
+}
