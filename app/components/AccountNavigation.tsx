@@ -5,7 +5,7 @@ import { selectNavigation, selectAccount } from '../actions';
 const AccountNavigation = (props: any) => {
     const accounts = props.accounts.map((account: any) => {
         return (
-            <li key={`acc${account.id}`} onClick={() => {props.selectAccount(account.id)}}>
+            <li className='nav-item' key={`acc${account.id}`} onClick={() => {props.selectAccount(account.id)}}>
                 {account.name}
             </li>
         );

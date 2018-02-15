@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import Navigation from './Navigation';
 import BudgetContainer from './BudgetContainer';
-import AccountTable from './AccountTable';
+import AccountContainer from './AccountContainer';
 require('./App.css');
 
 const App = (props: any) => {
@@ -12,7 +12,7 @@ const App = (props: any) => {
             currentContainer = <BudgetContainer />;
             break;
         case 'account':
-            currentContainer = <AccountTable />;
+            currentContainer = <AccountContainer />;
             break;
         default:
             currentContainer = <div>Nothing to see here</div>;

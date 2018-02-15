@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 import categories from '../reducers/categories';
 
-const AccountTable = (props: any) => {
+export default (props: any) => {
     const transactions = props.transactions.filter((transaction: any) => {
         return transaction.accountId === props.navigationState.account;
     }).map((transaction: any) => {
@@ -42,11 +41,3 @@ const AccountTable = (props: any) => {
         </table>
     )
 };
-
-const mapStateToProps = (state: any) => {
-    return state;
-}
-
-export default connect(
-    mapStateToProps
-)(AccountTable);

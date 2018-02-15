@@ -1,6 +1,6 @@
 const initialState = {
-    navigation: 'budget',
-    account: ''
+    navigation: 'account',
+    account: '0'
 };
 
 export default (state = initialState, action: any) => {

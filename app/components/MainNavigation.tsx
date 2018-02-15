@@ -5,9 +5,9 @@ import { selectNavigation } from '../actions';
 const MainNavigation = (props: any) => {
     return (
         <ul>
-            <li onClick={() => {props.selectNavigation('budget')}}>Budget</li>
-            <li onClick={() => {props.selectNavigation('reports')}}>Reports</li>
-            <li onClick={() => {props.selectNavigation('all-accounts')}}>All Accounts</li>
+            <li className='nav-item' onClick={() => {props.selectNavigation('budget')}}>Budget</li>
+            <li className='nav-item' onClick={() => {props.selectNavigation('reports')}}>Reports</li>
+            <li className='nav-item' onClick={() => {props.selectNavigation('all-accounts')}}>All Accounts</li>
         </ul>
     );
 };
