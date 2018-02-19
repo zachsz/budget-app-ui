@@ -27,3 +27,37 @@ export const selectAccount = (accountId: string) => {
         accountId
     }
 }
+
+export const addTransaction = () => {
+    return {
+        type: 'ADD_TRANSACTION'
+    }
+}
+
+export const updateTransactionDate = (date: string) => {
+    return {
+        type: 'UPDATE_TRANSACTION_DATE',
+        date
+    }
+}
+
+export const updateTransactionPayee = (payee: string) => {
+    return {
+        type: 'UPDATE_TRANSACTION_PAYEE',
+        payee
+    }
+}
+
+export const updateTransactionOutflow = (outflow: number) => {
+    return {
+        type: 'UPDATE_TRANSACTION_OUTFLOW',
+        outflow
+    }
+}
+
+export const updateTransactionInflow = (inflow: number) => {
+    return {
+        type: 'UPDATE_TRANSACTION_INFLOW',
+        inflow
+    }
+}

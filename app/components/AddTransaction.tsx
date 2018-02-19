@@ -1,5 +1,5 @@
 import * as React from 'react';
 
 export default (props: any) => (
-    <div>Add transaction...</div>
+    <div onClick={props.addTransaction}>Add transaction...</div>
 );
