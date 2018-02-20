@@ -28,9 +28,9 @@ export const selectAccount = (accountId: string) => {
     }
 }
 
-export const addTransaction = () => {
+export const toggleAddTransaction = () => {
     return {
-        type: 'ADD_TRANSACTION'
+        type: 'TOGGLE_ADD_TRANSACTION'
     }
 }
 
@@ -48,6 +48,13 @@ export const updateTransactionPayee = (payee: string) => {
     }
 }
 
+export const updateTransactionCategory = (category: string) => {
+    return {
+        type: 'UPDATE_TRANSACTION_CATEGORY',
+        category
+    }
+}
+
 export const updateTransactionOutflow = (outflow: number) => {
     return {
         type: 'UPDATE_TRANSACTION_OUTFLOW',
@@ -59,5 +66,12 @@ export const updateTransactionInflow = (inflow: number) => {
     return {
         type: 'UPDATE_TRANSACTION_INFLOW',
         inflow
+    }
+}
+
+export const addTransaction = (transaction: {accountId: string, subCategoryId: string, amount: number}) => {
+    return {
+        type: 'ADD_TRANSACTION',
+        transaction
     }
 }

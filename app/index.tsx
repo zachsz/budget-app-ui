@@ -5,7 +5,10 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import budgetApp from './reducers';
 
-const store = createStore(budgetApp);
+const store = createStore(
+    budgetApp,
+    (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 render(
     <Provider store={store}>

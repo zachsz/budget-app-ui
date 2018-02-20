@@ -4,7 +4,7 @@ const initialState = {
 
 export default (state = initialState, action: any) => {
     switch (action.type) {
-        case 'ADD_TRANSACTION':
+        case 'TOGGLE_ADD_TRANSACTION':
             return {
                 ...state,
                 addingTransaction: true

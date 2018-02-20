@@ -5,13 +5,7 @@ import TransactionEntryBox from './TransactionEntryBox';
 
 export default (props: any) => {
     const transactionEntryBox = (
-        <TransactionEntryBox
-            {...props.transactionState}
-            handleDateChange={props.handleDateChange}
-            handlePayeeChange={props.handlePayeeChange}
-            handleOutflowChange={props.handleOutflowChange}
-            handleInflowChange={props.handleInflowChange}
-        />
+        <TransactionEntryBox {...props}/>
     );
     const addTransactionBox = (
         <AddTransaction {...props} />

@@ -1,14 +1,14 @@
 const initialState = [{
-    id: 0,
+    id: '0',
     title: 'Monthly Bills'
 }, {
-    id: 1,
+    id: '1',
     title: 'Everyday Expenses'
 }, {
-    id: 2,
+    id: '2',
     title: 'Rainy Day Funds'
 }, {
-    id: 3,
+    id: '3',
     title: 'Savings Goals'
 }];
 
