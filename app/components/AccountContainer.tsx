@@ -35,7 +35,9 @@ const mapDispatchToProps = (dispatch: any) => {
             dispatch(updateTransactionInflow(e.target.value));
         },
         addTransaction: (transaction: {accountId: string, subCategoryId: string, amount: number}) => {
-            dispatch(addTransaction(transaction));
+            if (transaction.subCategoryId) {
+                dispatch(addTransaction(transaction));
+            }
         }
     }
 }

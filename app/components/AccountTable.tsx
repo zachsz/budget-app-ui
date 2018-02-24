@@ -1,6 +1,8 @@
 import * as React from 'react';
 import categories from '../reducers/categories';
 
+require('./AccountTable.css');
+
 export default (props: any) => {
     const transactions = props.transactions.filter((transaction: any) => {
         return transaction.accountId === props.navigationState.account;
@@ -25,7 +27,7 @@ export default (props: any) => {
         )
     });
     return (
-        <table>
+        <table className='table'>
             <thead>
                 <tr>
                     <th>Date</th>

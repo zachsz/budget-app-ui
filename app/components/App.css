@@ -24,3 +24,20 @@ body {
 .column.right {
     width: 85%;
 }
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.table tr:hover {
+    background: rgb(92, 92, 92);
+}
+
+.table td, .table th {
+    border: solid 1px #ddd;
+    padding: 8px;
+}
+
+.table .small {
+    width: 10%;
+}

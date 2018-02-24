@@ -1,5 +1,5 @@
 const initialState = {
-    navigation: 'account',
+    navigation: 'budget',
     account: '0'
 };
 

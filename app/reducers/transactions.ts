@@ -25,7 +25,7 @@ export default (state = initialState, action: any) => {
                     id: ++currentId,
                     accountId: action.transaction.accountId,
                     subCategoryId: action.transaction.subCategoryId,
-                    amount: action.transaction.amount
+                    amount: parseFloat(action.transaction.amount)
                 }
             ]
         default:

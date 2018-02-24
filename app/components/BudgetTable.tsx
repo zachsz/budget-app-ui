@@ -61,8 +61,7 @@ export default (props: BudgetTableProps) => {
     }, 0);
     const balance = budgeted + outflows;
     return (
-        <div className="budget-table">
-            <table >
+            <table className='table'>
                 <thead>
                     <tr>
                         <th />
@@ -74,13 +73,13 @@ export default (props: BudgetTableProps) => {
                         <th>
                             Categories +
                     </th>
-                        <th>
+                        <th className='small'>
                             Budgeted {`${getPrefix(budgeted)}${Math.abs(budgeted).toFixed(2)}`}
                         </th>
-                        <th>
+                        <th className='small'>
                             Outflows {`${getPrefix(budgeted)}${Math.abs(outflows).toFixed(2)}`}
                         </th>
-                        <th>
+                        <th className='small'>
                             Balance {`${getPrefix(budgeted)}${Math.abs(balance).toFixed(2)}`}
                         </th>
                     </tr>
@@ -89,6 +88,5 @@ export default (props: BudgetTableProps) => {
                     {categories}
                 </tbody>
             </table>
-        </div>
     )
 }
