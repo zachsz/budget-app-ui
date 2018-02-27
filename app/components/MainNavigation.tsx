@@ -4,10 +4,10 @@ import { selectNavigation } from '../actions';
 
 const MainNavigation = (props: any) => {
     return (
-        <ul>
-            <li className='nav-item' onClick={() => {props.selectNavigation('budget')}}>Budget</li>
-            <li className='nav-item' onClick={() => {props.selectNavigation('reports')}}>Reports</li>
-            <li className='nav-item' onClick={() => {props.selectNavigation('all-accounts')}}>All Accounts</li>
+        <ul className="nav flex-column">
+            <li className='nav-item' onClick={() => {props.selectNavigation('budget')}}><a href="#" className="nav-link">Budget</a></li>
+            <li className='nav-item' onClick={() => {props.selectNavigation('reports')}}><a href="#" className="nav-link">Reports</a></li>
+            <li className='nav-item' onClick={() => {props.selectNavigation('all-accounts')}}><a href="#" className="nav-link">All Accounts</a></li>
         </ul>
     );
 };

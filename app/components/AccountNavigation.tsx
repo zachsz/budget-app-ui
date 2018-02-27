@@ -5,13 +5,15 @@ import { selectNavigation, selectAccount } from '../actions';
 const AccountNavigation = (props: any) => {
     const accounts = props.accounts.map((account: any) => {
         return (
-            <li className='nav-item' key={`acc${account.id}`} onClick={() => {props.selectAccount(account.id)}}>
-                {account.name}
+            <li className='nav-item' key={`acc${account.id}`} onClick={() => { props.selectAccount(account.id) }}>
+                <a href="#" className="nav-link">
+                    {account.name}
+                </a>
             </li>
         );
     })
     return (
-        <ul>
+        <ul className="nav flex-column">
             {accounts}
         </ul>
     );

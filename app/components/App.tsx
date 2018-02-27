@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Navigation from './Navigation';
 import BudgetContainer from './BudgetContainer';
 import AccountContainer from './AccountContainer';
-require('./App.css');
+require('./bootstrap.min.css');
+require('./dashboard.css');
 
 const App = (props: any) => {
     let currentContainer;
@@ -19,13 +20,27 @@ const App = (props: any) => {
             break;
     }
     return (
-        <div className="row">
-            <Navigation />
-            <div className="column right">
-                {currentContainer}
+        <div>
+            <nav className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+                <a href="#" className="navbar-brand col-sm-3 col-md-2 mr-0">Company name</a>
+                <input className="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" />
+                <ul className="navbar-nav px-3">
+                    <li className="nav-item text-nowrap">
+                        <a href="#" className="nav-link">Sign out</a>
+                    </li>
+                </ul>
+            </nav>
+            <div className="container-fluid">
+                <div className="row">
+                    <Navigation />
+                    <main className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                        {currentContainer}
+                    </main>
+                </div>
             </div>
         </div>
-);}
+    );
+}
 
 const mapStateToProps = (state: any) => {
     return state;

@@ -3,20 +3,12 @@ import CategoryRow from './CategoryRow';
 import { CategoryRowProps } from './CategoryRow';
 import SubCategoryRow from './SubCategoryRow';
 import { getPrefix } from '../utils/utils';
-require('./BudgetTable.css');
 
 export interface BudgetTableProps {
     categories?: [any];
     subCategories?: [any];
     transactions?: [any];
     budget?: any;
-    // month?: string;
-    // totals?: {
-    //     budgeted: string;
-    //     outflows: string;
-    //     balance: string;
-    // }
-    // categories?: [CategoryRowProps],
     updateBudget?: any;
     finishEditing?: any;
 }
@@ -61,7 +53,7 @@ export default (props: BudgetTableProps) => {
     }, 0);
     const balance = budgeted + outflows;
     return (
-            <table className='table'>
+            <table className="table">
                 <thead>
                     <tr>
                         <th />
@@ -73,13 +65,13 @@ export default (props: BudgetTableProps) => {
                         <th>
                             Categories +
                     </th>
-                        <th className='small'>
+                        <th>
                             Budgeted {`${getPrefix(budgeted)}${Math.abs(budgeted).toFixed(2)}`}
                         </th>
-                        <th className='small'>
+                        <th>
                             Outflows {`${getPrefix(budgeted)}${Math.abs(outflows).toFixed(2)}`}
                         </th>
-                        <th className='small'>
+                        <th>
                             Balance {`${getPrefix(budgeted)}${Math.abs(balance).toFixed(2)}`}
                         </th>
                     </tr>
