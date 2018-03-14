@@ -75,3 +75,130 @@ export const addTransaction = (transaction: {accountId: string, subCategoryId: s
         transaction
     }
 }
+
+const receiveBudget = (month: string, data: any) => {
+    return {
+        type: 'RECEIVE_BUDGET',
+        masterCategories: data.masterCategories,
+        subCategories: data.subCategories
+    }
+};
+
+const dummyCategories = () => {
+    return {
+        type: 'RECEIVE_BUDGET',
+        masterCategories: [{
+            id: '0',
+            title: 'Monthly Bills'
+        }, {
+            id: '1',
+            title: 'Everyday Expenses'
+        }, {
+            id: '2',
+            title: 'Rainy Day Funds'
+        }, {
+            id: '3',
+            title: 'Savings Goals'
+        }],
+        subCategories: [{
+            id: '0',
+            categoryId: '0',
+            title: 'Rent/Mortgage',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '1',
+            categoryId: '0',
+            title: 'Phone',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '2',
+            categoryId: '0',
+            title: 'Road Tax',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '3',
+            categoryId: '0',
+            title: 'Council Tax',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '4',
+            categoryId: '0',
+            title: 'Natural Gas/Propane/Oil',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '5',
+            categoryId: '0',
+            title: 'Electricity',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '6',
+            categoryId: '0',
+            title: 'Water',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '7',
+            categoryId: '0',
+            title: 'Netflix',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '8',
+            categoryId: '0',
+            title: 'Spotify',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '9',
+            categoryId: '0',
+            title: 'Internet',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '10',
+            categoryId: '0',
+            title: 'Sky TV',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }, {
+            id: '11',
+            categoryId: '0',
+            title: 'TV Licence',
+            budgeted: 0,
+            editing: false,
+            tempBudgeted: ''
+        }]
+    };
+}
+
+export const fetchBudget = (month: string) => (dispatch: any) => {
+    // dispatch()
+    // setTimeout(() => {
+    //     dispatch(dummyCategories());
+    // }, 500);
+    return fetch(`http://localhost:3000/budget/${month}`)
+        .then((response) => {
+            return response.json();
+        })
+        .then((json) => {
+            console.log('got response', json);
+            return dispatch(receiveBudget(month, json));
+        });
+};

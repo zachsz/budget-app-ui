@@ -1,19 +1,7 @@
-const initialState = [{
-    id: '0',
-    title: 'Monthly Bills'
-}, {
-    id: '1',
-    title: 'Everyday Expenses'
-}, {
-    id: '2',
-    title: 'Rainy Day Funds'
-}, {
-    id: '3',
-    title: 'Savings Goals'
-}];
-
-export default (state = initialState, action: any) => {
+export default (state: any = [], action: any) => {
     switch (action.type) {
+        case 'RECEIVE_BUDGET':
+            return [...state, ...action.masterCategories];
         default:
             return state;
     }

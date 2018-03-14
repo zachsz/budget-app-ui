@@ -21,13 +21,13 @@ export default (props: any) => {
     return (
         <div>
             <div>
-                <input type='date' value={props.transactionState.date} onChange={props.handleDateChange} />
-                <input type='text' value={props.transactionState.payee} onChange={props.handlePayeeChange} />
+                <input className='form-control' type='date' value={props.transactionState.date} onChange={props.handleDateChange} />
+                <input className='form-control' type='text' value={props.transactionState.payee} onChange={props.handlePayeeChange} />
                 <select name='category' value={props.transactionState.category} onChange={props.handleCategoryChange}>
                     {options}
                 </select>
-                <input type='number' value={props.transactionState.outflow} onChange={props.handleOutflowChange} />
-                <input type='number' value={props.transactionState.inflow} onChange={props.handleInflowChange} />
+                <input className='form-control' type='number' value={props.transactionState.outflow} onChange={props.handleOutflowChange} />
+                <input className='form-control' type='number' value={props.transactionState.inflow} onChange={props.handleInflowChange} />
             </div>
             <div>
                 <button

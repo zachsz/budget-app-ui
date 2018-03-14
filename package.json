@@ -10,15 +10,18 @@
   "author": "Zach Szumotalski",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.0.0",
     "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "@types/react-dom": "^16.0.3",
     "@types/react-redux": "^5.0.14",
+    "@types/redux-thunk": "^2.1.0",
     "awesome-typescript-loader": "^3.4.1",
     "css-loader": "^0.28.9",
     "html-webpack-plugin": "^2.30.1",

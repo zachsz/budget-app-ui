@@ -16,7 +16,7 @@ const initialState = [{
 }];
 let currentId = initialState[initialState.length - 1].id;
 
-export default (state = initialState, action: any) => {
+export default (state: any = [], action: any) => {
     switch (action.type) {
         case 'ADD_TRANSACTION':
             return [

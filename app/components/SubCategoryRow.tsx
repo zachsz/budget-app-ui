@@ -44,6 +44,7 @@ class SubCategoryRow extends React.Component<SubCategoryRowProps> {
                 <td>{this.props.title}</td>
                 <td>
                     <input
+                        className='form-control form-control-sm'
                         ref='input'
                         type="number"
                         value={this.props.editing ? this.props.tempBudgeted : this.props.budgeted.toFixed(2)}
