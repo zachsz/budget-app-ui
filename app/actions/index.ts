@@ -69,7 +69,7 @@ export const updateTransactionInflow = (inflow: number) => {
     }
 }
 
-export const addTransaction = (transaction: {accountId: string, subCategoryId: string, amount: number}) => {
+export const addTransaction = (transaction: { accountId: string, subCategoryId: string, amount: number }) => {
     return {
         type: 'ADD_TRANSACTION',
         transaction
@@ -200,5 +200,32 @@ export const fetchBudget = (month: string) => (dispatch: any) => {
         .then((json) => {
             console.log('got response', json);
             return dispatch(receiveBudget(month, json));
+        });
+};
+
+export const openMasterCategoryModal = () => {
+    return {
+        type: 'SHOW_MASTER_CATEGORY_MODAL'
+    }
+};
+
+export const hideMasterCategoryModal = () => {
+    return {
+        type: 'HIDE_MASTER_CATEGORY_MODAL'
+    };
+};
+
+export const addMasterCategory = (title: string) => (dispatch: any) => {
+    return fetch(`http://localhost:3000/master-categories`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            title: 'foo'
+        })
+    })
+        .then(() => {
+            return dispatch(hideMasterCategoryModal());
         });
 };

@@ -4,6 +4,8 @@ import Navigation from './Navigation';
 // import BudgetContainer from './BudgetContainer';
 import BudgetTable from './BudgetTable';
 import AccountContainer from './AccountContainer';
+import MasterCategoryModal from './MasterCategoryModal';
+import { addMasterCategory, hideMasterCategoryModal } from '../actions';
 require('bootstrap/dist/css/bootstrap.min.css');
 require('./dashboard.css');
 
@@ -39,14 +41,24 @@ const App = (props: any) => {
                     </main>
                 </div>
             </div>
+            {props.navigationState.showMasterCategoryModal ?
+                <MasterCategoryModal addMasterCategory={props.addMasterCategory} hideMasterCategoryModal={props.hideMasterCategoryModal} /> : null}
         </div>
     );
-}
+};
 
 const mapStateToProps = (state: any) => {
     return state;
-}
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+    return ({
+        addMasterCategory: (title: string = 'foo') => { dispatch(addMasterCategory(title)) },
+        hideMasterCategoryModal: () => { dispatch(hideMasterCategoryModal()) }
+    });
+};
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(App);

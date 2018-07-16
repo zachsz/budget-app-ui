@@ -4,7 +4,7 @@ import CategoryRow from './CategoryRow';
 import { CategoryRowProps } from './CategoryRow';
 import SubCategoryRow from './SubCategoryRow';
 import { getPrefix } from '../utils/utils';
-import { fetchBudget, updateCategoryBudget, finishEditing } from '../actions';
+import { fetchBudget, updateCategoryBudget, finishEditing, openMasterCategoryModal } from '../actions';
 
 export interface BudgetTableProps {
     categories?: [any];
@@ -14,6 +14,7 @@ export interface BudgetTableProps {
     updateBudget?: any;
     finishEditing?: any;
     dispatch?: any;
+    addMasterCategory?: any;
 }
 
 class BudgetTable extends React.Component<BudgetTableProps> {
@@ -76,7 +77,14 @@ class BudgetTable extends React.Component<BudgetTableProps> {
                     </tr>
                     <tr>
                         <th>
-                            Categories +
+                            <span>Categories&nbsp;</span>
+                            <a href="#" className="text-muted" onClick={ this.props.addMasterCategory }>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-plus-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                                </svg>
+                            </a>
                         </th>
                         <th>
                             Budgeted {`${getPrefix(budgeted)}${Math.abs(budgeted).toFixed(2)}`}
@@ -103,6 +111,7 @@ const mapStateToProps = (state: any) => {
 
 const mapDispatchToProps = (dispatch: any) => {
     return ({
+        addMasterCategory: () => {dispatch(openMasterCategoryModal())},
         updateBudget: (catId: number, value: string) => {dispatch(updateCategoryBudget(catId, value))},
         finishEditing: (catId: number, value: string) => {dispatch(finishEditing(catId, value))},
         dispatch: dispatch
