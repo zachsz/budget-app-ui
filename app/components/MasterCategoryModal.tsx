@@ -14,12 +14,19 @@ export default (props: any) => (
                     <form>
                         <div className="form-group">
                             <label htmlFor="masterCategoryName">Master Category Name</label>
-                            <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="Enter Master Category name" />
+                            <input
+                                type="text"
+                                className="form-control"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter Master Category name"
+                                value={props.masterCategoryName} 
+                                onChange={props.updateMasterCategory}
+                            />
                         </div>
                     </form>
                 </div>
                 <div className="modal-footer">
-                    <button type="button" className="btn btn-primary" onClick={props.addMasterCategory}>Save changes</button>
+                    <button type="button" className="btn btn-primary" onClick={() => {props.addMasterCategory(props.masterCategoryName)}}>Save changes</button>
                     <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={props.hideMasterCategoryModal}>Close</button>
                 </div>
             </div>

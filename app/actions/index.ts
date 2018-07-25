@@ -215,6 +215,13 @@ export const hideMasterCategoryModal = () => {
     };
 };
 
+export const updateMasterCategory = (masterCategoryName: string) => {
+    return {
+        type: 'UPDATE_MODAL_MASTER_CATEGORY_NAME',
+        masterCategoryName
+    };
+}
+
 export const addMasterCategory = (title: string) => (dispatch: any) => {
     return fetch(`http://localhost:3000/master-categories`, {
         method: 'POST',

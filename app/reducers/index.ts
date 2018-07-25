@@ -7,6 +7,7 @@ import accounts from './accounts';
 import navigationState from './navigationState';
 import accountState from './accountState';
 import transactionState from './transactionState';
+import masterCategoryModal from './masterCategoryModal';
 
 export default combineReducers({
     budget,
@@ -16,5 +17,6 @@ export default combineReducers({
     accounts,
     navigationState,
     accountState,
-    transactionState
+    transactionState,
+    masterCategoryModal
 });

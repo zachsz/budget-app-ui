@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 import BudgetTable from './BudgetTable';
 import AccountContainer from './AccountContainer';
 import MasterCategoryModal from './MasterCategoryModal';
-import { addMasterCategory, hideMasterCategoryModal } from '../actions';
+import { addMasterCategory, hideMasterCategoryModal, updateMasterCategory } from '../actions';
 require('bootstrap/dist/css/bootstrap.min.css');
 require('./dashboard.css');
 
@@ -41,8 +41,13 @@ const App = (props: any) => {
                     </main>
                 </div>
             </div>
-            {props.navigationState.showMasterCategoryModal ?
-                <MasterCategoryModal addMasterCategory={props.addMasterCategory} hideMasterCategoryModal={props.hideMasterCategoryModal} /> : null}
+            {props.masterCategoryModal.show ?
+                <MasterCategoryModal
+                    masterCategoryName={props.masterCategoryModal.masterCategoryName}
+                    updateMasterCategory={props.updateMasterCategory}
+                    addMasterCategory={props.addMasterCategory}
+                    hideMasterCategoryModal={props.hideMasterCategoryModal}
+                /> : null}
         </div>
     );
 };
@@ -53,8 +58,9 @@ const mapStateToProps = (state: any) => {
 
 const mapDispatchToProps = (dispatch: any) => {
     return ({
-        addMasterCategory: (title: string = 'foo') => { dispatch(addMasterCategory(title)) },
-        hideMasterCategoryModal: () => { dispatch(hideMasterCategoryModal()) }
+        addMasterCategory: (title: string) => { dispatch(addMasterCategory(title)) },
+        hideMasterCategoryModal: () => { dispatch(hideMasterCategoryModal()) },
+        updateMasterCategory: (e: React.ChangeEvent<any>) => { dispatch(updateMasterCategory(e.target.value)) }
     });
 };
 
